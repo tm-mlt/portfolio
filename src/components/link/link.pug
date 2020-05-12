@@ -1,0 +1,3 @@
+mixin link(href='/', active=false)
+  a.link(href=href class=(active === href ? "active" : undefined))&attributes(attributes)
+    block

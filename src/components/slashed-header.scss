@@ -1,0 +1,10 @@
+.slashed-header {
+  font-size: $about-header-size;
+  color: $about-header-color;
+  font-weight: normal;
+  margin: 0 0 $body-padding 0;
+
+  &:before {
+    content: '/';
+  }
+}

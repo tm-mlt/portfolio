@@ -1,0 +1,26 @@
+.header {
+  margin: 0 auto;
+  width: 210px;
+  text-align: center;
+  padding-bottom: $logo-padding;
+
+  &__logo {
+    display: inline-block;
+    height: $logo-size;
+    width: $logo-size;
+    background-color: $brand-color;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

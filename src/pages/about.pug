@@ -1,0 +1,29 @@
+extends ../components/layout
+
+block nav
+  - var active = "/about.html"
+
+block title
+  title schteinmiller - about
+
+block page
+  .about
+    .content-column
+      h1.slashed-header about
+        div
+          .about__description
+            .about__photo
+              img(src="" alt="alex's photo")
+            p всем привет!
+            p меня зовут Александра, я молодой 2д и 3д иллюстратор из россии.
+            p если у вас есть предложения по сотрудничеству, свяжитесь со мной!
+            ul.about__software.diamond-list
+              | software:
+              li blender
+              li photoshop
+              li illustrator
+              li procreate
+          .clearfix
+      h2.slashed-header(id="contacts") contacts
+        p если вы хотите поработать со мной, напишите мне об этом на почту!
+        p.about__email hardlifecore@gmail.com

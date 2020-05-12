@@ -1,0 +1,13 @@
+extends ../components/layout
+
+include ../components/preview/preview
+
+block nav
+  - var active = "/"
+
+block page
+  .main-page
+    .preview-list
+      +preview('roses', 'projects/roses.html', 'https://sun9-29.userapi.com/CdcXnPzC3UUTR1bYtvYHsOaWAvtvSmwOf7diMQ/V4sNqMPawQk.jpg')
+      +preview('roses', 'projects/roses.html', 'https://sun9-29.userapi.com/CdcXnPzC3UUTR1bYtvYHsOaWAvtvSmwOf7diMQ/V4sNqMPawQk.jpg')
+      +preview('roses', 'projects/roses.html', 'https://sun9-29.userapi.com/CdcXnPzC3UUTR1bYtvYHsOaWAvtvSmwOf7diMQ/V4sNqMPawQk.jpg')

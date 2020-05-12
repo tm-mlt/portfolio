@@ -1,0 +1,10 @@
+.link {
+  &:hover,
+  &:focus {
+    color: $hover-link-color;
+  }
+  
+  &.active {
+    color: $active-link-color;
+  }
+}

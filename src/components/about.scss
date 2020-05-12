@@ -1,0 +1,32 @@
+.about {
+  &__photo {
+    width: 35%;
+    float: left;
+    margin-right: 100px;
+    margin-bottom: 55px;
+
+    &:before {
+      content: '';
+      padding-top: 125%;
+      display: block;
+    }
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__description {
+    font-size: $about-text-size;
+  }
+
+  &__software {
+    line-height: 2em;
+  }
+
+  &__email {
+    margin-top: -10px;
+    font-size: 24px;
+  }
+}
