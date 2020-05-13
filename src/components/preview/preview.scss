@@ -1,15 +1,28 @@
 .preview {
   position: relative;
+  display: block;
   max-height: 400px;
   height: 400px;
 
-  &__image {
+  &:before {
+    content: '';
+    padding-top: 56.25%;
+  }
+
+  &__wrapper {
+    position: relative;
     height: 100%;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     background-position: center;
-    background-size: 100% auto;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-color: $brand-color;
-    transition: background-size 1s ease;
   }
 
   &__overlay {
@@ -20,7 +33,6 @@
     height: 100%;
     opacity: 0;
     background-color: $brand-color;
-    transition: opacity 0.3s ease;
   }
 
   &__name {
@@ -32,12 +44,9 @@
     opacity: 0;
   }
 
+
   &:hover &,
   &:focus & {
-      &__image {
-        background-size: 105% auto;
-      }
-
       &__overlay {
         opacity: 0.7;
       }

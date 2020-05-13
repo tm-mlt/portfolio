@@ -1,5 +1,6 @@
 mixin preview(name, link, image)
-  a.preview(href=link)
-    .preview__image(style=`background-image: url(${image})`)
-    .preview__overlay
-    .preview__name #{name}
+  a.preview(href=link class=gif ? 'preview--has-gif' : undefined)
+    .preview__wrapper
+      .preview__image(style=`background-image: url(${image})`)
+      .preview__overlay
+      .preview__name #{name}

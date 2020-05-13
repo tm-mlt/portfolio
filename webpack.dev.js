@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 const glob = require('glob');
 
@@ -31,6 +32,7 @@ const PATHS = {
   src: path.join(__dirname, 'src'),
   dist: path.join(__dirname, 'dist'),
   pages: path.join(__dirname, 'src/pages'),
+  static: path.join(__dirname, 'static'),
 };
 
 const PAGES = glob
@@ -78,7 +80,7 @@ module.exports = {
 
         use: [
           {
-            loader: 'style-loader'
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader'
@@ -87,6 +89,13 @@ module.exports = {
             loader: 'sass-loader'
           }
         ]
+      },
+      {
+          test: /\.jpe?g$|\.gif$|\.png$/i,
+          loader: "file-loader",
+          options: {
+            name: '[path][name].[ext]',
+          }
       }
     ]
   },
@@ -110,6 +119,7 @@ module.exports = {
   },
 
   plugins: [
+    new MiniCssExtractPlugin(),
     ...PAGES.map(page => {
       const isProjects = page.search(/projects/) > -1;
       const basename = path.basename(page);
@@ -118,11 +128,11 @@ module.exports = {
         template: path.join(PATHS.pages, isProjects ? 'projects' : '', basename),
         filename: filename.replace(/\.pug/, '.html'),
       });
-    })
+    }),
   ],
 
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: PATHS.static,
     compress: true,
     port: 8080
   }

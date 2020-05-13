@@ -1,6 +1,7 @@
 extends ../components/layout
 
 include ../components/preview/preview
+include ../components/preview-list/preview-list
 
 block nav
   - var active = "/"
@@ -8,6 +9,33 @@ block nav
 block page
   .main-page
     .preview-list
-      +preview('roses', 'projects/roses.html', 'https://sun9-29.userapi.com/CdcXnPzC3UUTR1bYtvYHsOaWAvtvSmwOf7diMQ/V4sNqMPawQk.jpg')
-      +preview('roses', 'projects/roses.html', 'https://sun9-29.userapi.com/CdcXnPzC3UUTR1bYtvYHsOaWAvtvSmwOf7diMQ/V4sNqMPawQk.jpg')
-      +preview('roses', 'projects/roses.html', 'https://sun9-29.userapi.com/CdcXnPzC3UUTR1bYtvYHsOaWAvtvSmwOf7diMQ/V4sNqMPawQk.jpg')
+      +column(1)
+        +preview(
+          'roses',
+          'projects/roses.html',
+          '/projects/rose/render11.png'
+        )
+      +column(3)
+        +preview(
+          'microphone',
+          'projects/microphone.html',
+          '/projects/microphone/microfonimg.png'
+        )
+      +column(2)
+        +preview(
+          'ghostwave',
+          'projects/ghostwave.html',
+          '/projects/ghostwave/ghostimg.png'
+        )
+      +column(4, true)
+        +preview(
+          'kray',
+          'projects/kray.html',
+          '/projects/kray/sea-road.png'
+        )
+      +column(2, true)
+        +preview(
+          'water',
+          'projects/water.html',
+          '/projects/water/1.jpg'
+        )

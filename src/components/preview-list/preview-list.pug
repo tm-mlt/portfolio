@@ -1,0 +1,3 @@
+mixin column(columns = 1, noGrow)
+  .preview-list__column(class=[`preview-list__column--${columns}`, noGrow ? 'preview-list__column--no-grow' : undefined])
+    block

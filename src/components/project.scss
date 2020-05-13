@@ -1,0 +1,25 @@
+.project {
+  &__header {
+    margin: 40px 0;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__images {
+    img {
+      max-height: 400px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  &__description {
+    text-align: center;
+  }
+
+  &__more-pictures {
+    margin: 40px 0;
+    text-align: center;
+    color: #878787;
+  }
+}

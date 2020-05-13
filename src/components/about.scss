@@ -1,5 +1,6 @@
 .about {
   &__photo {
+    position: relative;
     width: 35%;
     float: left;
     margin-right: 100px;
@@ -12,8 +13,11 @@
     }
     
     img {
-      width: 100%;
-      height: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100%;;
     }
   }
 

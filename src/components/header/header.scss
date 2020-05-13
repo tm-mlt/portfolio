@@ -8,7 +8,8 @@
     display: inline-block;
     height: $logo-size;
     width: $logo-size;
-    background-color: $brand-color;
+    background-size: 100%;
+    background-image: url('../../static/images/logo--transparent.gif');
   }
 
   &__links {

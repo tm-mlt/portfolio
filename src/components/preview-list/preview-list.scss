@@ -1,7 +1,25 @@
 .preview-list {
+  $self: &;
+
   display: flex;
+  flex-wrap: wrap;
+  margin: -9px;
 
   & > * {
-    flex: 1 1 33%;
+    flex: 1 0 33%;
+    padding: 9px;
+  }
+
+  &__column {
+
+    @for $i from 0 through 4 {
+      #{$self} &--#{$i + 1} {
+        flex-basis: #{100/(5 - $i)}#{"%"};
+      }
+    }
+
+    #{$self} &--no-grow {
+      flex-grow: 0;
+    }
   }
 }
