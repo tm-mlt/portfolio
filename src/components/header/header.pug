@@ -2,10 +2,11 @@ include ../link/link
 
 mixin header(active)
   header.header
-    .header__logo
-    .header__name alex schteinmiller
-    .header__career
+    a.header__home-link(href="/")
+      .header__logo
+      .header__name alex schteinmiller
+      .header__career 2d & 3d illustration
     .header__links
       +link("/", active).header__link work
-      +link("/about.html", active).header__link about
-      +link("/about.html#contacts", active).header__link contacts
+      +link("/about", active).header__link about
+      +link("/about#contacts", active).header__link contacts

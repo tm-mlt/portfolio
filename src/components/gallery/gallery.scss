@@ -1,0 +1,11 @@
+.gallery {
+  $padding: 9px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -($padding / 2);
+
+  &__item {
+    padding: $padding / 2;
+  }
+}

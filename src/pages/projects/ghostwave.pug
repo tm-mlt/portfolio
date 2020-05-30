@@ -3,8 +3,11 @@ extends ../../components/project
 block title
   title schteinmiller - ghostwave
 
+block nav
+  - var active = ""
+
 block images
-  img(src="/projects/ghostwave/majonggif.gif")
+  img(src=require("~images/projects/ghostwave/majonggif.gif").default)
 
 block name
   | ghostwave
@@ -13,18 +16,18 @@ block content
   p it's a special project for online shop "ghostwave79".
   p print and logo where created.
 
-block more
+block append more
   .row
     .col
-      img(src="/projects/ghostwave/majongsketch.jpg")
+      img(src=require("~images/projects/ghostwave/majongsketch.jpg").default)
     .col
-      img(src="/projects/ghostwave/majongimg.png")
+      img(src=require("~images/projects/ghostwave/majongimg.png").default)
     .col
-      img(src="/projects/ghostwave/majongwireframe.png")
+      img(src=require("~images/projects/ghostwave/majongwireframe.png").default)
   .row
     .col
-      img(src="/projects/ghostwave/ghostsketch.jpg")
+      img(src=require("~images/projects/ghostwave/ghostsketch.jpg").default)
     .col
-      img(src="/projects/ghostwave/ghostwireframe.png")
+      img(src=require("~images/projects/ghostwave/ghostwireframe.png").default)
     .col
-      img(src="/projects/ghostwave/ghostsgif.gif")
+      img(src=require("~images/projects/ghostwave/ghostsgif.gif").default)

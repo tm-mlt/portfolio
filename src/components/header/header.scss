@@ -3,6 +3,11 @@
   width: 210px;
   text-align: center;
   padding-bottom: $logo-padding;
+  font-size: 20px;
+
+  &__home-link {
+    display: block;
+  }
 
   &__logo {
     display: inline-block;

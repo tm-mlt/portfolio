@@ -3,8 +3,16 @@ extends ../../components/project
 block title
   title schteinmiller - water
 
+block nav
+  - var active = ""
+
+
 block images
-  img(src="/projects/water/1.jpg")
+  .gallery
+    .gallery__item
+      img(src=require("~images/projects/water/1.jpg").default)
+    .gallery__item
+      img(src=require("~images/projects/water/2.jpg").default)
 
 block name
   | water
@@ -13,6 +21,3 @@ block content
   p illustrations in author's experimental style.
 
 block more
-  .row
-    .col
-      img(src="/projects/water/2.jpg")

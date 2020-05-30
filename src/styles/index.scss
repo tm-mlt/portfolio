@@ -3,6 +3,11 @@
 @import "./vars";
 @import "../components/index";
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: 'Manrope', sans-serif;
   margin: 0;
@@ -20,6 +25,14 @@ a {
 
 .body-wrapper {
   padding: $body-padding;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1 100%;
+  font-size: 18px;
 }
 
 img {

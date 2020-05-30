@@ -3,6 +3,10 @@ extends ../../components/project
 block title
   title schteinmiller - kray
 
+block nav
+  - var active = ""
+
+
 block images
   <iframe width="100%" height="400" src="https://www.youtube.com/embed/Jg9_KvSXigo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -12,28 +16,28 @@ block name
 block content
   p project is being created as part of final project at the university.
 
-block more
+block append more
   .row
     .col
-      img(src="/projects/kray/model.png")
+      img(src=require("~images/projects/kray/model.png").default)
   .row
     .col
-      img(src="/projects/kray/moscow.png")
+      img(src=require("~images/projects/kray/moscow.png").default)
   .row
     .col
-      img(src="/projects/kray/room.png")
+      img(src=require("~images/projects/kray/room.png").default)
   .row
     .col
-      img(src="/projects/kray/reload.png")
+      img(src=require("~images/projects/kray/reload.png").default)
   .row
     .col
-      img(src="/projects/kray/train.png")
+      img(src=require("~images/projects/kray/train.png").default)
   .row
     .col
-      img(src="/projects/kray/store.png")
+      img(src=require("~images/projects/kray/store.png").default)
   .row
     .col
-      img(src="/projects/kray/car.png")
+      img(src=require("~images/projects/kray/car.png").default)
   .row
     .col
-      img(src="/projects/kray/sea-road.png")
+      img(src=require("~images/projects/kray/sea-road.png").default)

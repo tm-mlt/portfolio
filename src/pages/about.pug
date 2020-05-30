@@ -1,29 +1,32 @@
 extends ../components/layout
 
 block nav
-  - var active = "/about.html"
+  - var active = "/about"
 
 block title
   title schteinmiller - about
 
 block page
+  - var email = 'aschteinmiller@gmail.com'
   .about
     .content-column
       h1.slashed-header about
-        div
-          .about__description
-            .about__photo
-              img(src="/images/portrait.png" alt="alex's photo")
-            p hey there!
-            p my name is Alex. I'm an young and aspiring 2d & 3d illustrator from Russia.
-            p for collabs and commisions, send me an email at aschteinmiller@gmail.com.
-            p let's make something cool!
-            .clearfix
-            ul.about__software.diamond-list
-              | software:
-              li blender
-              li photoshop
-              li illustrator
-              li procreate
+      div
+        .about__description
+          .about__photo
+            img(src=require("~images/portrait.png").default alt="alex's photo")
+          p hey there!
+          p my name is Alex. I'm an young and aspiring 2d & 3d illustrator from Russia.
+          p for collabs and commisions, send me an email at #{email}.
+          p let's make something cool!
+          .clearfix
+          p today I’m interested in static 3d illustrations, if you have business proposal, please contact me.
+          ul.about__software.diamond-list
+            | software:
+            li blender
+            li photoshop
+            li illustrator
+            li procreate
       h2.slashed-header(id="contacts") contacts
-        p email: hardlifecore@gmail.com
+      p if you would like to work with me together, feel free to send an email.
+      p(style="font-size: 24px") email: #{email}

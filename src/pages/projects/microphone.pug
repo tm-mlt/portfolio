@@ -3,8 +3,12 @@ extends ../../components/project
 block title
   title schteinmiller - microphone
 
+block nav
+  - var active = ""
+
+
 block images
-  img.stretch-img(src="/projects/microphone/microfongif.gif")
+  img.stretch-img(src=require("~images/projects/microphone/microfongif.gif").default)
 
 block content
   p
@@ -13,10 +17,10 @@ block content
 block name
   | microphone
 
-block more
+block append more
   .row
     .col
-      img(src="/projects/microphone/microfonimg.png")
+      img(src=require("~images/projects/microphone/microfonimg.png").default)
   .row
     .col
-      img(src="/projects/microphone/wireframe.png")
+      img(src=require("~images/projects/microphone/wireframe.png").default)

@@ -3,8 +3,12 @@ extends ../../components/project
 block title
   title schteinmiller - roses
 
+block nav
+  - var active = ""
+
+
 block images
-  img(src="/projects/rose/rosegif.gif")
+  img(src=require("~images/projects/rose/rosegif.gif").default)
 
 block name
   | roses
@@ -14,12 +18,12 @@ block content
     | project has been created as a part of self thaught lighting
     | and texturing in blender.
 
-block more
+block append more
   .row
     .col
-      img(src="/projects/rose/1.png")
+      img(src=require("~images/projects/rose/1.png").default)
     .col
-      img(src="/projects/rose/render10.png")
+      img(src=require("~images/projects/rose/render10.png").default)
   .row
     .col
-      img(src="/projects/rose/render11.png")
+      img(src=require("~images/projects/rose/render11.png").default)
