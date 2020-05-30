@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 const glob = require('glob');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 /*
  * SplitChunksPlugin is enabled by default and replaced
@@ -33,6 +35,7 @@ const PATHS = {
   dist: path.join(__dirname, 'dist'),
   pages: path.join(__dirname, 'src/pages'),
   static: path.join(__dirname, 'static'),
+  images: path.join(__dirname, 'static/images'),
 };
 
 const PAGES = glob
@@ -94,13 +97,13 @@ module.exports = {
           test: /\.jpe?g$|\.gif$|\.png$/i,
           loader: "file-loader",
           options: {
+            publicPath: url => `/${url}`,
             name: '[path][name].[ext]',
           }
       }
     ]
   },
 
-  mode: 'development',
 
   optimization: {
     splitChunks: {
@@ -119,14 +122,21 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
+    //new CopyPlugin({
+    //  patterns: [
+    //    { from: 'source', to: 'dest' },
+    //    { from: 'other', to: 'public' },
+    //  ],
+    //}),
     new MiniCssExtractPlugin(),
     ...PAGES.map(page => {
       const isProjects = page.search(/projects/) > -1;
-      const basename = path.basename(page);
+      const basename = path.basename(page, '.pug');
       const filename = isProjects ? `projects/${basename}` : basename;
       return new HtmlWebpackPlugin({
-        template: path.join(PATHS.pages, isProjects ? 'projects' : '', basename),
-        filename: filename.replace(/\.pug/, '.html'),
+        template: path.join(PATHS.pages, isProjects ? 'projects' : '', `${basename}.pug`),
+        filename: filename === 'index' ? `index.html` : `${filename}/index.html`,
       });
     }),
   ],
@@ -135,5 +145,11 @@ module.exports = {
     contentBase: PATHS.static,
     compress: true,
     port: 8080
+  },
+
+  resolve: {
+    alias: {
+      '~images': PATHS.images,
+    }
   }
 };
